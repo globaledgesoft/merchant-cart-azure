@@ -1,0 +1,72 @@
+<div class="container-fluid full-height">
+	<div class="row full-height bg">
+		<div class="col-lg-12 col-md-12 col-sm-12">
+			<!-- <div id="containerDiv"> -->
+				<div class="drop-container" id="drop-container" droppable drop="handleDrop">drop container</div>
+	<!-- 		</div> -->
+				<div class="drop-container-south-stage" id="drop-container-south-stage" droppable drop="handleDrop">drop container</div>
+
+				<div class="drop-container1" id="drop-container1"></div>
+				<div class="drop-container2" id="drop-container2"></div>
+
+			<img src="../images/cart-95%25.png" id="95" class="cart95" alt="95" draggable="true" draggable drop="handleDrop">
+			<img src="../images/cart-5%25.png"  id="5"  class="cart5" alt="5" draggable="true" draggable drop="handleDrop"> 
+			<img src="../images/cart-30%25.png" id="30" class="cart30" alt="30" draggable="true" draggable drop="handleDrop">
+			<img src="../images/cart-75%25.png" id="75" class="cart75" alt="75" draggable="true" draggable drop="handleDrop">
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6">
+			<button type="button" class="btn main-btn margin-col" ng-click="gotoMain()">Dashboard</button>
+		</div>
+		<div id="mySidenav" class="sidenav">
+			<div class="margin-sidenav">
+				<a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">&times;</a>
+				<h3 class="sales-title margin-sidenav sales-title-inventory">Inventory Levels</h3>
+				<p class="sales-msg margin-sidenav">Inventory of Sales Over Time</p>
+				<canvas id="inventoryLevels"></canvas>
+				<hr class="margin-sidenav" />
+				<h3 class="sales-title margin-sidenav">Merch Cart Sales</h3>
+				<p class="sales-msg margin-sidenav">by Stage</p>
+				<div class="flex">
+					<div class="col-lg-8 col-md-8 col-sm-8">
+						<canvas id="merchantSales"></canvas>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 text-center">
+						<div ng-repeat="stage in merchantSales.stages" class="merchant-sales-legend" style="color:{{merchantSales.backgroundColor[$index]}}" ng-click="">{{stage}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal fade" id="moveCartModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+		  <div class="modal-content ">
+			  <div class="modal-header movecard-modalHeader">
+					<!-- <i class="material-icons modal-close-icon" data-dismiss="modal">close</i> -->
+			  </div>
+			<div class="modal-body moveCart-modalBody">
+				<img src="../images/move a cart model.png" alt="moveCart">
+				<p> Move a cart to a stage </p>
+				<button class="btn move-cart-ok-btn" data-dismiss="modal">OK</button>
+			</div>
+		  </div>
+		</div>
+	</div>
+
+
+	<div class="modal fade" id="movedCartModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+		  <div class="modal-content movedCartModal-content ">
+			  <div class="modal-header movecard-modalHeader">
+					<i class="material-icons modal-close-icon" data-dismiss="modal">close</i>
+			  </div>
+			<div class="modal-body moveCart-modalBody">
+				<p class="heading"> {{modalTitle}}</p>
+				<p ng-bind-html="modalContent"> </p>
+			</div>
+		  </div>
+		</div>
+	</div>
+
+</div>
