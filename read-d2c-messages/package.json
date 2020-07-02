@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/Azure-Samples/azure-iot-samples-node#readme",
   "dependencies": {
-    "knex": "^0.15.2",
+    "knex": "^0.19.5",
     "pg": "^7.5.0",
     "async": "^3.0.1",
     "@azure/event-hubs": "^1.0.7"
