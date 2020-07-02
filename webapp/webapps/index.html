@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US" class="full-height">
+<head>
+	<title>MUSIC-FESTIVAL</title>
+	<link rel="stylesheet" type="text/css" href="custom.css">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<script src="vendor/bootstrap/jquery.min.js"></script>
+<script src="vendor/bootstrap/popper.min.js"></script>
+<script src="vendor/bootstrap/bootstrap.min.js"></script> 
+
+<script src="vendor/chartJS/moment.js"></script>
+<script src="vendor/chartJS/Chart.min.js"></script>
+<script src="./vendor/chartJS/Chart.PieceLabel.min.js"></script>
+
+<script src="vendor/angular/angular.min.js"></script>
+<script src="vendor/angular/angular-route.min.js"></script>
+<script src="vendor/angular/angular-sanitize.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="app.js"></script>
+<script src="services/apiService.js"></script>
+<script src="controllers/mainController.js"></script>
+<script src="controllers/dashboardController.js"></script>
+<body ng-app="app" class="full-height">
+	<div ng-view class="full-height"></div>
+	<div id="dashboard-backdrop"></div>
+</body>
+</html>

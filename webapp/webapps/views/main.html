@@ -1,0 +1,104 @@
+<div class="container-fluid full-height">
+	<div class="row full-height">
+		<div class="col-lg-8 col-md-8 col-sm-8 text-center row">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<h2 class="inventory-title black">Inventory</h2>
+			</div>
+			<div class="col-lg-1 col-md-1 col-sm-1">&nbsp;</div>
+			<div class="col-lg-10 col-md-10 col-sm-10 inventory">
+				<div class="row align-items-end">
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<img src="../images/Beer.png">
+						<!-- <h2 class="item-name">Beer</h2>
+						<h1 class="item-quantity">{{beer}}</h1> -->
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<img src="../images/Koozies.png">
+						<!-- <h2 class="item-name">Koozies</h2>
+						<h1 class="item-quantity">{{koozies}}</h1> -->
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<img src="../images/Openers.png">
+						<!-- <h2 class="item-name">Openers</h2>
+						<h1 class="item-quantity">{{openers}}</h1> -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-4 item-img">
+						<!-- <img src="../images/Beer.png"> -->
+						<h2 class="item-name">Beer</h2>
+						<h1 class="item-quantity">{{beer}}</h1>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 item-img">
+					<!-- 	<img src="../images/Koozies.png"> -->
+						<h2 class="item-name">Koozies</h2>
+						<h1 class="item-quantity">{{koozies}}</h1>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 item-img">
+					<!-- 	<img src="../images/Openers.png"> -->
+						<h2 class="item-name">Openers</h2>
+						<h1 class="item-quantity">{{openers}}</h1>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<button type="button" class="btn dashboard-btn" ng-click="gotoDashboard()">Dashboard</button>
+			</div>
+		</div>
+
+		<div id="mySidenav" class="sidenav">
+			<div class="margin-sidenav">
+				<a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">&times;</a>
+				<h3 class="sales-title margin-sidenav sales-title-inventory">Inventory Levels</h3>
+				<p class="sales-msg margin-sidenav">Inventory of Sales Over Time</p>
+				<canvas id="inventoryLevels"></canvas>
+				<hr class="margin-sidenav" />
+				<h3 class="sales-title margin-sidenav">Merch Cart Sales</h3>
+				<p class="sales-msg margin-sidenav">by Stage</p>
+				<div class="flex">
+					<div class="col-lg-8 col-md-8 col-sm-8">
+						<canvas id="merchantSales"></canvas>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 text-center">
+						<div ng-repeat="stage in merchantSales.stages" class="merchant-sales-legend" style="color:{{merchantSales.backgroundColor[$index]}}" ng-click="">{{stage}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-lg-4 col-md-4 col-sm-4 cooler text-center">
+			<div class="row full-height">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<h2 class="cooler-title">Cooler<br>Temperature</h2>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<h1 class="cooler-temp">{{tempF}}&deg;F</h1>
+					<h1>({{tempC}}&deg;C)</h1>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<button type="button" class="btn restock-btn" ng-click="restock()">Restock</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- modal  -->
+	<div class="modal fade" id="beerAlertModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+		  <div class="modal-content beer-modal-content">
+			<div class="modal-body">
+				<img src="../images/Exclamation Mark.png" class="alert-img" alt="Exclamation">
+				<p class="beer-alert-header">Sales Opportunity!</p>
+				<div class="row justify-content-center">
+					<div class="col-lg-10 col-md-10">
+						<p class="beer-alert-content">There are not enough beer carts near Center Stage</p>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn ok-btn" ng-click="gotoDashboard_moveCart('false')">OK</button>
+			</div>
+		  </div>
+		</div>
+	</div>
+</div>

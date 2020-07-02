@@ -1,0 +1,17 @@
+Use the key (sent previously) to connect to azure instance as follows (port 22 must be enabled in your network):
+
+- ssh -i mykey azure@104.42.212.129
+
+Use below command in case you get file permission error:
+- chmod 400 mykey
+
+Once logged in:
+
+To kill all node processes
+ - pkill -f node 
+To start web dashboard
+ - cd ~/azure-iot/webapp
+ - node app.js &
+To start receiving messages from LTE for IoT board:
+ - cd ~/azure-iot/read-d2c-messages
+ - node ReadDeviceToCloudMessages.js & (repeat for more instances of listener - load balancing/scaling)
